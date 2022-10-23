@@ -2,11 +2,15 @@ import React from 'react'
 import "./TodoSearch.css"
 
 function TodoSearch() {
+  function searchTask(e) {
+    console.log(e.target.value);
+  }
   return (
-    <input 
+    <input
       placeholder='find your task'
       className='TodoSearch'
-      ></input>
+      onChange={searchTask}
+    ></input>
   )
 }
 

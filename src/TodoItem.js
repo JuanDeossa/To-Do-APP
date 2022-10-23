@@ -12,13 +12,13 @@ function TodoItem(props) {
   return (
     <li className='TodoItem'>
         <span
-        className='TodoItem__delete'
-        onClick={()=>deleteTask(text)}>
-        🅧</span>
+          className='TodoItem__delete'
+          onClick={()=>deleteTask(text)}
+        >🅧</span>
         <p className={`TodoItem__text ${completed && "TodoItem__text--ok"}`}>{text}</p>
-        <span 
-        className='TodoItem__ok'
-        onClick={()=>completeTask(text)}
+        <span
+          className='TodoItem__ok'
+          onClick={()=>completeTask(text)}
         >☑</span>
     </li>
   )
