@@ -15,16 +15,20 @@ function App(props) {
     {text:"sleep",completed:false},
   ]
   return (
-    <React.Fragment>
+    <>
       <TodoCounter/>
       <TodoSearch/>
       <TodoList>
         {toDoS.map(toDo=>(
-          <TodoItem key={toDo.text} text={toDo.name}/>
+          <TodoItem
+          key={toDo.text}
+          text={toDo.text}
+          completed={toDo.completed}
+          />
         ))}
       </TodoList>
       <CreateTodoButton/>
-    </React.Fragment>
+    </>
   );
 }
 

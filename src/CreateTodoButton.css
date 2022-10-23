@@ -1,0 +1,15 @@
+.CreateTodoButton{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 70%;
+    margin-top: 15px;
+}
+.CreateTodoButton:hover{
+    transform: scale(1.1);
+}

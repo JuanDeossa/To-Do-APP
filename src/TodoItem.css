@@ -1,0 +1,44 @@
+.TodoItem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px 10px 5px;
+    font-size: 30rem;
+    color: beige;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 80%;
+    gap: 10px;
+    position: relative;
+}
+.TodoItem__delete{
+    color: rgb(238, 228, 228);
+    background-color: transparent;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.TodoItem__delete:hover{
+    transform: scale(1.2);
+    color: rgb(144, 29, 29);
+    background-color: rgb(232, 230, 230);
+}
+.TodoItem__ok{
+    position: absolute;
+    right: 5px;
+}
+.TodoItem__ok:hover{
+    transform: scale(1.2);
+    color: rgb(40, 181, 15);
+}
+.TodoItem__text{
+    color: rgb(241, 238, 244);
+    font-weight: 500;
+}
+.TodoItem__text.TodoItem__text--ok{
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+}

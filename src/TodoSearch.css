@@ -1,0 +1,10 @@
+.TodoSearch{
+    display: flex;
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px 0px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    text-align: center;
+    font-weight: 600;
+}
