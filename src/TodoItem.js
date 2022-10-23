@@ -3,11 +3,23 @@ import "./TodoItem.css"
 
 function TodoItem(props) {
   const {text,completed}=props
+  function deleteTask(task) {
+    console.log(`You deleted the task: ${task}`);
+  }
+  function completeTask(task) {
+    console.log(`You completed the task: ${task}`);
+  }
   return (
     <li className='TodoItem'>
-        <span className='TodoItem__delete'>🅧</span>
+        <span
+        className='TodoItem__delete'
+        onClick={()=>deleteTask(text)}>
+        🅧</span>
         <p className={`TodoItem__text ${completed && "TodoItem__text--ok"}`}>{text}</p>
-        <span className='TodoItem__ok'>☑</span>
+        <span 
+        className='TodoItem__ok'
+        onClick={()=>completeTask(text)}
+        >☑</span>
     </li>
   )
 }
