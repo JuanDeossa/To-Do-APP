@@ -9,12 +9,13 @@ import React from "react";
 
 function App(props) {
   const [searchValue,setSearchValue] = React.useState("")
-  const toDoS = [
+  const defaultTasks = [
     {text:"clean room",completed:false},
     {text:"play games",completed:false},
     {text:"eat pizza",completed:false},
     {text:"sleep",completed:false},
   ]
+  const [tasks,setTask] = React.useState(defaultTasks)
   return (
     <>
       <TodoCounter/>
@@ -23,11 +24,11 @@ function App(props) {
         setSearchValue={setSearchValue}
       />
       <TodoList>
-        {toDoS.map(toDo=>(
+        {tasks.map(task=>(
           <TodoItem
-          key={toDo.text}
-          text={toDo.text}
-          completed={toDo.completed}
+          key={task.text}
+          text={task.text}
+          completed={task.completed}
           />
         ))}
       </TodoList>
