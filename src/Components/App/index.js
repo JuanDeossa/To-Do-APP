@@ -1,11 +1,6 @@
-import { TodoCounter } from "./TodoCounter";
-import { TodoSearch } from "./TodoSearch";
-import { TodoList } from "./TodoList";
-import { TodoItem } from "./TodoItem";
-import { CreateTodoButton } from "./CreateTodoButton";
-// import './App.css';
-
 import React from "react";
+import { AppUI } from "./AppUI.js";
+
 const defaultTasks = [
   {text:"clean room",completed:false},
   {text:"play games",completed:false},
@@ -51,30 +46,17 @@ function App() {
   }
 
   return (
-    <>
-      <TodoCounter
-        totalTasks={totalTasks}
-        completedTasks={completedTasks}
-      />
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <TodoList>
-        {searchedTasks.map(task=>(
-          <TodoItem
-          key={task.text}
-          text={task.text}
-          completed={task.completed}
-          toggleTask={()=>toggleTaskState(task.text)}
-          deleteTask={()=>deleteTask(task.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton/>
-    </>
+    <AppUI
+      totalTasks={totalTasks}
+      completedTasks={completedTasks}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTasks={searchedTasks}
+      toggleTaskState={toggleTaskState}
+      deleteTask={deleteTask}
+    />
   );
 }
 
-export default App;
+export {App}
 
