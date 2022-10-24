@@ -1,5 +1,6 @@
 import React from "react";
 import { AppUI } from "./AppUI.js";
+import { useLocalStorage } from "../../Hooks/useLocalStorage.js";
 
 // const defaultTasks = [
 //   {text:"clean room",completed:false},
@@ -8,27 +9,9 @@ import { AppUI } from "./AppUI.js";
 //   {text:"sleep",completed:false},
 // ]
 
-
 function App() {
-  //Localstorage
-  const localStorageVersion = "TASKS_V1"
-  const localStorageTasks = localStorage.getItem(localStorageVersion)
-  let parsedTasks
-  if (!localStorageTasks) {
-    localStorage.setItem(localStorageVersion,"[]")
-    parsedTasks=[]
-  } else {
-    parsedTasks=JSON.parse(localStorageTasks)
-  }
-
-  function saveTasks(newTasks) {
-    const strTasks=JSON.stringify(newTasks)
-    localStorage.setItem(localStorageVersion,strTasks)
-    setTask(newTasks)
-  }
-  //
+  const [tasks,saveTasks]=useLocalStorage("TASKS_V1",[])
   const [searchValue,setSearchValue] = React.useState("")
-  const [tasks,setTask] = React.useState(parsedTasks)
   const totalTasks = tasks.length
   const completedTasks = tasks.filter(task=>!!task.completed).length
   let searchedTasks=[]
