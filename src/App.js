@@ -40,6 +40,16 @@ function App() {
     }
     setTask(newTasks)
   }
+
+  function deleteTask(taskValue) {
+    const index = tasks.findIndex(task=>task.text===taskValue)
+    const newTasks = [...tasks]
+    if (index>=0) {
+      newTasks.splice(index,1)
+    }
+    setTask(newTasks)
+  }
+
   return (
     <>
       <TodoCounter
@@ -57,6 +67,7 @@ function App() {
           text={task.text}
           completed={task.completed}
           toggleTask={()=>toggleTaskState(task.text)}
+          deleteTask={()=>deleteTask(task.text)}
           />
         ))}
       </TodoList>
