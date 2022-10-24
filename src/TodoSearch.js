@@ -5,7 +5,7 @@ function TodoSearch(props) {
   const {searchValue,setSearchValue}=props
   function searchTask(e) {
     const inputValue = e.target.value
-    console.log(inputValue);
+    // console.log(inputValue);
     setSearchValue(inputValue)
   }
   return (
@@ -16,7 +16,6 @@ function TodoSearch(props) {
       onChange={searchTask}
       value={searchValue}
     ></input>
-    <h2>{searchValue}</h2>
     </>
   )
 }
