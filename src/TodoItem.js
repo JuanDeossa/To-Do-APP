@@ -6,9 +6,9 @@ function TodoItem(props) {
   function deleteTask(task) {
     console.log(`You deleted the task: ${task}`);
   }
-  function completeTask(task) {
-    console.log(`You completed the task: ${task}`);
-  }
+  // function completeTask(task) {
+  //   console.log(`You completed the task: ${task}`);
+  // }
   return (
     <li className='TodoItem'>
         <span
@@ -17,11 +17,13 @@ function TodoItem(props) {
         >🅧</span>
         <p className={`TodoItem__text ${completed && "TodoItem__text--ok"}`}>{text}</p>
         <span
-          className='TodoItem__ok'
-          onClick={()=>completeTask(text)}
-        >☑</span>
+          className={`TodoItem__ok ${completed && "TodoItem__ok--selected"}`}
+          onClick={props.toggleTask}
+        ></span>
     </li>
   )
 }
 
 export {TodoItem}
+
+//☐☑

@@ -19,6 +19,7 @@ function App() {
   const totalTasks = tasks.length
   const completedTasks = tasks.filter(task=>!!task.completed).length
   let searchedTasks=[]
+
   if (searchValue.length===0) {
     searchedTasks=tasks
   }else{
@@ -29,6 +30,16 @@ function App() {
     })
   }
 
+  function toggleTaskState(taskValue) {
+    const index = tasks.findIndex(task=>task.text===taskValue)
+    const newTasks = [...tasks]
+    if (newTasks[index].completed) {
+      newTasks[index].completed=false
+    } else {
+      newTasks[index].completed=true
+    }
+    setTask(newTasks)
+  }
   return (
     <>
       <TodoCounter
@@ -45,6 +56,7 @@ function App() {
           key={task.text}
           text={task.text}
           completed={task.completed}
+          toggleTask={()=>toggleTaskState(task.text)}
           />
         ))}
       </TodoList>

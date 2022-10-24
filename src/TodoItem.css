@@ -23,16 +23,28 @@
 }
 .TodoItem__delete:hover{
     transform: scale(1.2);
-    color: rgb(144, 29, 29);
+    color: rgb(176, 25, 25);
     background-color: rgb(232, 230, 230);
+    cursor: pointer;
 }
 .TodoItem__ok{
     position: absolute;
     right: 5px;
 }
+.TodoItem__ok::before{
+    content: "☐";
+}
 .TodoItem__ok:hover{
     transform: scale(1.2);
-    color: rgb(40, 181, 15);
+    color: rgb(38 255 0);
+    cursor: pointer;
+}
+.TodoItem__ok.TodoItem__ok--selected{
+    transform: scale(1.2);
+    color: rgb(38 255 0);
+}
+.TodoItem__ok.TodoItem__ok--selected::before{
+    content: "☑";
 }
 .TodoItem__text{
     color: rgb(241, 238, 244);

@@ -11,7 +11,7 @@ function TodoSearch(props) {
   return (
     <>
     <input
-      placeholder='find your task'
+      placeholder='find your task...'
       className='TodoSearch'
       onChange={searchTask}
       value={searchValue}
