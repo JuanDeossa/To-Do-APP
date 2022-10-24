@@ -8,6 +8,7 @@ import { CreateTodoButton } from "./CreateTodoButton";
 import React from "react";
 
 function App(props) {
+  const [searchValue,setSearchValue] = React.useState("")
   const toDoS = [
     {text:"clean room",completed:false},
     {text:"play games",completed:false},
@@ -17,7 +18,10 @@ function App(props) {
   return (
     <>
       <TodoCounter/>
-      <TodoSearch/>
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <TodoList>
         {toDoS.map(toDo=>(
           <TodoItem

@@ -1,16 +1,23 @@
 import React from 'react'
 import "./TodoSearch.css"
 
-function TodoSearch() {
+function TodoSearch(props) {
+  const {searchValue,setSearchValue}=props
   function searchTask(e) {
-    console.log(e.target.value);
+    const inputValue = e.target.value
+    console.log(inputValue);
+    setSearchValue(inputValue)
   }
   return (
+    <>
     <input
       placeholder='find your task'
       className='TodoSearch'
       onChange={searchTask}
+      value={searchValue}
     ></input>
+    <h2>{searchValue}</h2>
+    </>
   )
 }
 
