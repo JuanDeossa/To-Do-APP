@@ -1,7 +1,9 @@
+import React from "react"
+import { taskContext } from "../TodoContext"
 import "./TodoSearch.css"
 
-function TodoSearch(props) {
-  const {searchValue,setSearchValue}=props
+function TodoSearch() {
+  const {searchValue,setSearchValue}=React.useContext(taskContext)
   function searchTask(e) {
     const inputValue = e.target.value
     setSearchValue(inputValue)
