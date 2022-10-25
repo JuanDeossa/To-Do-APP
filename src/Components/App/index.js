@@ -2,15 +2,8 @@ import React from "react";
 import { AppUI } from "./AppUI.js";
 import { useLocalStorage } from "../../Hooks/useLocalStorage.js";
 
-// const defaultTasks = [
-//   {text:"clean room",completed:false},
-//   {text:"play games",completed:false},
-//   {text:"eat pizza",completed:false},
-//   {text:"sleep",completed:false},
-// ]
-
 function App() {
-  const [tasks,saveTasks]=useLocalStorage("TASKS_V1",[])
+  const {item:tasks,saveItem:saveTasks,loading,error}=useLocalStorage("TASKS_V1",[])
   const [searchValue,setSearchValue] = React.useState("")
   const totalTasks = tasks.length
   const completedTasks = tasks.filter(task=>!!task.completed).length
@@ -48,6 +41,8 @@ function App() {
 
   return (
     <AppUI
+      loading={loading}
+      error={error}
       totalTasks={totalTasks}
       completedTasks={completedTasks}
       searchValue={searchValue}

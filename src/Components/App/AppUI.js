@@ -3,6 +3,7 @@ import { TodoSearch } from "../TodoSearch/index.js";
 import { TodoList } from "../TodoList/index.js";
 import { TodoItem } from "../TodoItem/index.js";
 import { CreateTodoButton } from "../CreateTodoButton/index.js";
+import './App.css'
 
 function AppUI({
     totalTasks,
@@ -12,6 +13,9 @@ function AppUI({
     searchedTasks,
     toggleTaskState,
     deleteTask,
+    // useEffect - loading & error.
+    loading,
+    error,
     }){
     return(
     <>
@@ -24,6 +28,9 @@ function AppUI({
         setSearchValue={setSearchValue}
         />
         <TodoList>
+        {error && <p className="stateMessage">error...</p>}
+        {loading && <p className="stateMessage">loading...</p>}
+        {(!loading && !searchedTasks.length) && <p className="stateMessage">Create a new task &#10549;</p>}
         {searchedTasks.map(task=>(
             <TodoItem
             key={task.text}

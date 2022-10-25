@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.stateMessage{
+  color: #ffe500;
+  font-size: 20rem;
+}
