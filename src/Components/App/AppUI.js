@@ -1,11 +1,12 @@
+import React from "react";
+import './App.css'
 import { taskContext } from "../TodoContext/index.js";
 import { TodoCounter } from "../TodoCounter/index.js";
 import { TodoSearch } from "../TodoSearch/index.js";
 import { TodoList } from "../TodoList/index.js";
 import { TodoItem } from "../TodoItem/index.js";
+import { TodoForm } from "../TodoForm/index.js";
 import { CreateTodoButton } from "../CreateTodoButton/index.js";
-import './App.css'
-import React from "react";
 import { Modal } from "../Modal/index.js";
 
 function AppUI(){
@@ -38,7 +39,7 @@ function AppUI(){
         </TodoList>
         {!!openModal &&(
             <Modal>
-                <p>I am a Modal</p>
+                <TodoForm/>
             </Modal>)
         }
         <CreateTodoButton

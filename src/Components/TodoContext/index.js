@@ -38,12 +38,20 @@ function TaskProvider(props) {
     }
 
     function deleteTask(taskValue) {
-    const index = tasks.findIndex(task=>task.text===taskValue)
-    const newTasks = [...tasks]
-    if (index>=0) {
-        newTasks.splice(index,1)
+        const index = tasks.findIndex(task=>task.text===taskValue)
+        const newTasks = [...tasks]
+        if (index>=0) {
+            newTasks.splice(index,1)
+        }
+        saveTasks(newTasks)
     }
-    saveTasks(newTasks)
+    function addTask(taskValue) {
+        const newTasks = [...tasks]
+        newTasks.push({
+            text:taskValue,
+            completed:false,
+        })
+        saveTasks(newTasks)
     }
     return (
         <taskContext.Provider value={{
@@ -56,6 +64,7 @@ function TaskProvider(props) {
             searchedTasks,
             toggleTaskState,
             deleteTask,
+            addTask,
             openModal,
             setOpenModal,
         }}>
