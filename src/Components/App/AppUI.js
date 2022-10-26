@@ -6,6 +6,7 @@ import { TodoItem } from "../TodoItem/index.js";
 import { CreateTodoButton } from "../CreateTodoButton/index.js";
 import './App.css'
 import React from "react";
+import { Modal } from "../Modal/index.js";
 
 function AppUI(){
     const {
@@ -33,6 +34,9 @@ function AppUI(){
             />
         ))}
         </TodoList>
+        <Modal>
+            <p>I am a Modal</p>
+        </Modal>
         <CreateTodoButton/>
     </>)
 }
