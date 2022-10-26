@@ -14,7 +14,9 @@ function AppUI(){
         loading,
         deleteTask,
         toggleTaskState,
-        searchedTasks
+        searchedTasks,
+        openModal,
+        setOpenModal,
     }=React.useContext(taskContext)
     return(
     <>
@@ -34,10 +36,15 @@ function AppUI(){
             />
         ))}
         </TodoList>
-        <Modal>
-            <p>I am a Modal</p>
-        </Modal>
-        <CreateTodoButton/>
+        {!!openModal &&(
+            <Modal>
+                <p>I am a Modal</p>
+            </Modal>)
+        }
+        <CreateTodoButton
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+        />
     </>)
 }
 export {AppUI}

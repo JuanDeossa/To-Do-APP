@@ -1,8 +1,19 @@
 import "./CreateTodoButton.css"
 
-function CreateTodoButton() {
+function CreateTodoButton(props) {
+  function toggleModal() {
+    const {openModal,setOpenModal}=props
+    if (!!openModal) {
+      setOpenModal(false)
+    } else {
+      setOpenModal(true)
+    }
+  }
   return (
-    <button className='CreateTodoButton'>+</button>
+    <button
+    className='CreateTodoButton'
+    onClick={()=>toggleModal()}
+    >+</button>
   )
 }
 

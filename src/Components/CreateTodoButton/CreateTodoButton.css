@@ -9,6 +9,8 @@
     align-items: center;
     margin-left: 70%;
     margin-top: 15px;
+    position: absolute;
+    z-index: 1;
 }
 .CreateTodoButton:hover{
     transform: scale(1.1);
